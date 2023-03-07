@@ -6,6 +6,10 @@
 //    well as implement this function in the [implementation file of Person class](./a1/person.cpp).
 
 
+Person::Person(const std::string& name, unsigned int age, bool vaccinated)
+    : name_(name), age_(age), vaccinated_(vaccinated)
+    {}
+
 std::string Person::getName(void) {
   return name_;
 }
@@ -26,5 +30,9 @@ bool Person::getVaccinatedStatus(void) {
 //
 // When a person is given a vaccine, their `vaccinated` status should change.
 bool Person::vaccinate(){
-
+  if (vaccinated_) {
+      return false;
+  }
+  vaccinated_ = true;
+return true; 
 }
